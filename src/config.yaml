@@ -1,5 +1,5 @@
 {
-  'data_split': '-small',                                             # Dataset split
+  'data_split': '-base',                                             # Dataset split
   'base_model': 'NousResearch/Llama-2-7b-hf',                         # Base model path
   'max_length' : 512,                                                 # Max length of sequence
   'doc_stride' :128,                                                  # Doc stride for chunk
