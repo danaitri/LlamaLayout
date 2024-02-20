@@ -1,0 +1,41 @@
+{
+  'data_split': '-small',                                             # Dataset split
+  'base_model': 'NousResearch/Llama-2-7b-hf',                         # Base model path
+  'max_length' : 512,                                                 # Max length of sequence
+  'doc_stride' :128,                                                  # Doc stride for chunk
+  'input_size': 224,                                                  # Input image size
+  'patch_size': 16,                                                   # Image patch size
+  'batch_size': 12,                                                   # Batch Size
+  'output_dir':  './LlamaLayOut-finetuned-DocLayNet-base-Multi-2',    # Output directory
+  'max_steps':20000,                                                  # Maximum number of training steps
+  'per_device_train_batch_size':2,                                    # Batch size for training
+  'per_device_eval_batch_size':1,                                     # Batch size for evaluation
+  'learning_rate':0.0001,                                             # Learning rate for the optimizer
+  'evaluation_strategy':'steps',                                      # Evaluate every "eval_steps" steps
+  'eval_steps':500 ,                                                  # Evaluate every 250 steps
+  'save_strategy':'steps',                                            # Save checkpoints every "save_steps" steps
+  'save_steps':500,                                                   # Save checkpoints every 1000 steps
+  'logging_dir':'./LlamaLayOut-finetuned-DocLayNet-base-Multi-2/logs/', # Directory for storing logs
+  'logging_steps':100,                                                # Log every "logging_steps" steps
+  'load_best_model_at_end':True,                                      # Load the best model when finished training
+  'metric_for_best_model':'accuracy',                                 # Use accuracy as the metric to compare models
+  'greater_is_better' : True,                                         # Indicate whether the metric is to be maximized or minimized
+  'warmup_ratio':0.1,                                                 # Warmup a bit
+  'bf16':True ,                                                       # Precision
+  'lora_alpha':32,                                                    # lora alpha
+  'lora_dropout':0.1,                                                 # lora dropout prob
+  'lora_r': 16,                                                       # lora rank
+  "vocab_size": 32000,                                                # vocabulary size
+  "type_vocab_size" : 1,                                              # vocabulary size type
+  "layer_norm_eps": 1e-05,                                            # normalization layer eps - NOT USED
+  "hidden_dropout_prob": 0.1,                                         # dropout propability
+  "max_2d_position_embeddings": 1024,                                 # Max Position embeddings
+  "max_position_embeddings": 514,                                     # Position embeddings
+  "coordinate_size": 683,                                             # Coordinate position embedding size
+  "shape_size": 683,                                                  # w, h position embedding size
+  "num_channels": 3,                                                  # Input image channels
+  "hidden_size": 4096,                                                # Llama hidden size
+  "pad_token_id": 0,                                                  # word embeddings token id
+}
+
+
